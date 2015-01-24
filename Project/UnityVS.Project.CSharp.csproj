@@ -116,6 +116,7 @@
     <Compile Include="Assets\x-unitmx\Assets\X-UniTMX\NanoXML\NanoXMLParser.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\firstLevel-short.xml" />
     <None Include="Assets\x-unitmx\Assets\Resources\GameMaps\3DPlataformSceneInvColliders.xml" />
     <None Include="Assets\x-unitmx\Assets\Resources\GameMaps\3DPlataformSceneMain.xml" />
     <None Include="Assets\x-unitmx\Assets\Resources\GameMaps\3DPlataformScenePlataforms1.xml" />

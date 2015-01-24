@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="isometric" renderorder="right-down" width="30" height="43" tilewidth="256" tileheight="160" nextobjectid="1">
+<map version="1.0" orientation="isometric" renderorder="right-down" width="30" height="43" tilewidth="256" tileheight="160" nextobjectid="3">
  <tileset firstgid="1" name="tiledmap (1)" tilewidth="256" tileheight="160">
-  <image source="../../../../../../../Downloads/tiledmap.png" width="768" height="480"/>
+  <image source="tiledmap.png" width="768" height="480"/>
  </tileset>
  <layer name="Layer 0" width="30" height="43">
   <data>
@@ -503,7 +503,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -532,7 +532,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1297,4 +1297,7 @@
    <tile gid="0"/>
   </data>
  </layer>
+ <objectgroup name="Player">
+  <object id="2" x="2560" y="6240" width="160" height="160"/>
+ </objectgroup>
 </map>
