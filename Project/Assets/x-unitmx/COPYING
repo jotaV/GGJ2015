@@ -1,0 +1,40 @@
+Several independent works are being distributed along with X-UniTMX that fall
+under different licenses. You can find the license that applies to each file
+in the comment at the top, but since you cant do it with the assets they are listed here:
+
+Item					Directory									License								AUTHOR/URL
+-------------------------------------------------------------------------------------------------------------------------
+X-UniTMX				/Code, /Editor								Unity Asset Store License			Guilherme Maia; Mário Madureira Fontes
+XTiled					/Code										MIT									FuncWorks, LLC
+CharacterController2D	/Assets/Resources/X-UniTMX Examples/		
+						GameScene-Plataform/Scripts					CC BY-NC-SA 3.0						Prime31 - https://github.com/prime31/CharacterController2D
+tiles.png				/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					GNU GPL v2							Barbie Seahorse - http://www.imitationpickles.org/barbie/
+levelmap.tga			/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					GNU GPL v2							Barbie Seahorse - http://www.imitationpickles.org/barbie/
+ortho-test1.png			/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					http://lostgarden.com/2007/03/lost-garden-license.html	Lost Garden - http://lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+ortho-test2.png			/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					GPL									SpriteLib GPL - http://www.flyingyogi.com/fun/spritelib.html
+fixed-ortho-test2.png	/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					GPL									SpriteLib GPL - http://www.flyingyogi.com/fun/spritelib.html
+tmw_desert_spacing.png	/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					GNU GPL v2							Tiled - http://www.mapeditor.og
+mini-tiles.png			/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					CC-BY 3.0							Blarget2 - http://opengameart.org/content/minimalist-pixel-tileset
+rltiles-pack			/Assets/Resources/OtherMapsExamples,
+						/Assets/Resources/GameMaps					CC-BY 3.0							RLTiles - http://rltiles.sf.net
+
+XTiled License:
+Copyright (c) 2012, FuncWorks, LLC All rights reserved
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Neither the name of the FuncWorks, LLC nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+RLTiles License:
+Part of (or All) the graphic tiles used in this program is the public domain roguelike tileset "RLTiles".
+
+You can find the original tileset at:
+http://rltiles.sf.net
