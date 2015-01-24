@@ -16,6 +16,7 @@ public class LayerOrganize : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        spriteRenderer.sortingOrder = (int) transform.position.y;
+        var layer = transform.position.y * -2;
+        spriteRenderer.sortingOrder = (int) layer;
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 
 public class GameBeat : MonoBehaviour {
 
-    public static double time, bps, bpm = 140;
+    public static double time, bps, bpm = 150.0f;
     public static int beat;
 
     void Awake() {
@@ -14,10 +14,17 @@ public class GameBeat : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        if (beat == -1) { 
+            GetComponent<AudioSource>().time = 0;
+            GetComponent<AudioSource>().Play();
+        }
+
         time += Time.fixedDeltaTime;
 
         if (time > bps) { 
             time -= bps;
+            if (beat == 7) GetComponent<AudioSource>().time = 0;
+
             beat = (beat + 1) % 8;
         }
 
@@ -33,6 +40,6 @@ public class GameBeat : MonoBehaviour {
     }
 
     void OnGUI() {
-        GUI.HorizontalSlider(new Rect(25, 25, 500, 200), beat, 0, 7);
+        GUI.HorizontalSlider(new Rect(25, 25, 300, 200), beat, 0, 7);
     }
 }
