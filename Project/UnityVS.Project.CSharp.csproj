@@ -66,6 +66,7 @@
     <Compile Include="Assets\Script\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Script\Player\PlayerEnemyAttention.cs" />
     <Compile Include="Assets\Script\Player\PlayerMoviment.cs" />
+    <Compile Include="Assets\Script\Player\SpriteSpark.cs" />
     <Compile Include="Assets\x-unitmx\Assets\X-UniTMX Examples\GameScene-3DPlataform\Scripts\ChangeProjectionCamera.cs" />
     <Compile Include="Assets\x-unitmx\Assets\X-UniTMX Examples\GameScene-Isometric\Scripts\Character2DIsometricController.cs" />
     <Compile Include="Assets\x-unitmx\Assets\X-UniTMX Examples\GameScene-Isometric\Scripts\IsometricGameController.cs" />

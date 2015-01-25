@@ -7,7 +7,8 @@ public class PlayerAttack : MonoBehaviour {
     // Update is called once per frame
 
     private List<GameObject> enemys = new List<GameObject>();
-    
+    public int lastBeat;
+
     void FixedUpdate() {
 
         Vector2 pos, vel = (Vector2) transform.parent.rigidbody2D.velocity;
@@ -18,20 +19,25 @@ public class PlayerAttack : MonoBehaviour {
         transform.localPosition = vel.normalized;
 
         if (Input.GetButtonDown("Fire1")) {
-
-            if (GameBeat.checkInput()) {
-                foreach (GameObject go in enemys) 
-                    go.GetComponent<Enemy>().GiveDamage();
-
+            if (GameBeat.checkInput() != null) {
+                foreach (GameObject go in enemys) {
+                    go.GetComponent<Enemy>().ReceiveDamage();
+                }
             } else {
+                lastBeat = GameBeat.beat;
             }
+        } else {
+            if (GameBeat.checkInput() == null) lastBeat = GameBeat.beat;
         }
+    }
+
+    public int CurrentBeatAttack() {
+        return lastBeat;
     }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag != "Enemy") return;
 
-        print("Enter Enemy");
         if (!enemys.Contains(other.gameObject))
             enemys.Add(other.gameObject);
     }
@@ -39,7 +45,6 @@ public class PlayerAttack : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other){
         if (other.tag != "Enemy") return;
 
-        print("Out Enemy");
         if (enemys.Contains(other.gameObject))
             enemys.Remove(other.gameObject);
     }

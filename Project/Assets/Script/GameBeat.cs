@@ -5,13 +5,27 @@ using System.Linq;
 
 public class GameBeat : MonoBehaviour {
 
-    private static double lastCalc, bps, bpm = 150.0f;
+    public class Beat {
+        public int beat;
+        public double time;
 
+        public Beat(int beat, double time){
+            this.beat = beat;
+            this.time = time;
+        }
+    }
+
+    private static double bps, bpm = 150.0f;
+
+    public static double lastCalc;
     public static int beat;
 
     void Awake() {
         beat = -1;
         bps = 60.0f / bpm;
+
+        print(bps);
+
         lastCalc = bps + 1;
     }
 
@@ -36,8 +50,13 @@ public class GameBeat : MonoBehaviour {
         return beat % 2 == 0;
     }
 
-    public static bool checkInput() {
-        return lastCalc > bps * 0.8f || lastCalc < bps * 0.2f;
+    public static Beat checkInput() {
+        if (lastCalc > bps * 0.75f){
+            return new Beat(beat + 1, lastCalc);
+        }else if(lastCalc < bps * 0.35f) {
+            return new Beat(beat, lastCalc);
+        }
+        return null;
     }
 
     void OnGUI() {

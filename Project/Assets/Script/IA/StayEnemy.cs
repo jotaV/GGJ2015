@@ -19,6 +19,8 @@ public class StayEnemy : Enemy {
                 OnFinishedCicle();
             }
         }
+
+        //GiveDamage();
     }
 
     void OnFinishedCicle() {
