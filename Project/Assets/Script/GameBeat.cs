@@ -5,6 +5,8 @@ using System.Linq;
 
 public class GameBeat : MonoBehaviour {
 
+    public AudioSource Hit;
+
     public class Beat {
         public int beat;
         public double time;
@@ -20,14 +22,18 @@ public class GameBeat : MonoBehaviour {
     public static double lastCalc;
     public static int beat;
     public static int sumBeat = 0;
+    public static AudioSource _Hit;
 
     public float initalPoint = 0;
+
 
     void Awake() {
         beat = -1;
         bps = 60.0f / bpm;
 
         lastCalc = bps + 1;
+
+        _Hit = Hit;
     }
 
     void FixedUpdate() {
@@ -51,11 +57,15 @@ public class GameBeat : MonoBehaviour {
         //if (Input.GetButtonDown("Fire1")) print((checkInput() ? "HIT!!!" : "MISS!!") + " " + lastCalc);
     }
 
+    public static void PlayHit() {
+        _Hit.Play();
+    }
+
     public static bool getBinary() {
         return beat % 2 == 0;
     }
 
-    public static Beat checkInput() {
+    public static Beat checkInput(bool PlayHit = false) {
         if (lastCalc > bps * 0.6f){
             return new Beat(beat + 1, lastCalc);
         }else if(lastCalc < bps * 0.4f) {

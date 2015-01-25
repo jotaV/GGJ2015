@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour {
     public bool moveToContraPlayer { get; set; }
     public float speed;
     public float range;
+
+    public int life = 2;
    
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour {
         if (pA.lastBeat < GameBeat.beat) return;
 
         if (onContactPlayer && lastBeat != GameBeat.getBinary() && !getDamage) {
+            player.GetComponentInChildren<PlayerAttack>().TakeDamage(gameObject, GameBeat.beat);
             //print("give Damage " + GameBeat.beat);
         }
 
@@ -46,11 +49,17 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void ReceiveDamage() {
+    public bool ReceiveDamage() {
         if (!getDamage) {
             getDamage = true;
+            life -= 1;
+
+            if (life <= 0) return true;
+            else return false;
+
             //print("Damage Taiken " + GameBeat.beat + " " + GameBeat.lastCalc);
         }
+        return false;
     }
 
     void OnTriggerEnter2D(Collider2D other) {

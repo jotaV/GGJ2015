@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour {
     private List<GameObject> enemys = new List<GameObject>();
     public int lastBeat;
 
+    public int life = 5;
+
     void FixedUpdate() {
 
         Vector2 pos, vel = (Vector2) transform.parent.rigidbody2D.velocity;
@@ -22,14 +24,15 @@ public class PlayerAttack : MonoBehaviour {
             GameBeat.Beat b = GameBeat.checkInput();
 
             if (b != null) {
-                
+
+                if (enemys.Count != 0) GameBeat.PlayHit();
                 foreach (GameObject go in enemys) {
-                    go.GetComponent<Enemy>().ReceiveDamage();
+                    GiveDamage(go);
                 }
 
             } else {
-                
-                lastBeat = b.beat;
+
+                lastBeat = GameBeat.beat;
             
             }
         } else {
@@ -39,6 +42,33 @@ public class PlayerAttack : MonoBehaviour {
 
     public int CurrentBeatAttack() {
         return lastBeat;
+    }
+
+    public void GiveDamage(GameObject enemy) {
+        print("Done!");
+
+        Vector2 dir = (Vector2)transform.position - (Vector2)transform.position;
+        dir.Normalize();
+
+        if (enemy.GetComponent<Enemy>().ReceiveDamage()) {
+            try {
+                enemys.Remove(enemy);
+            } catch (System.Exception){} 
+            Destroy(enemy);
+        }
+
+        enemy.rigidbody2D.AddForce(dir * 100);
+        transform.parent.rigidbody2D.AddForce(dir * 5);
+    }
+
+    int damageBeat = -1;
+    public void TakeDamage(GameObject enemy, int beat) {
+        if (transform.parent.GetComponent<SpriteSpark>().enabled) return;
+
+        transform.parent.GetComponent<SpriteSpark>().enabled = true;
+        life -= 1;
+
+        if (life <= 0) print("Game Oever");
     }
 
     void OnTriggerEnter2D(Collider2D other) {
