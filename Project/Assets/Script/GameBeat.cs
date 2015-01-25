@@ -5,12 +5,14 @@ using System.Linq;
 
 public class GameBeat : MonoBehaviour {
 
-    public static double time, bps, bpm = 150.0f;
+    private static double lastCalc, bps, bpm = 150.0f;
+
     public static int beat;
 
     void Awake() {
         beat = -1;
         bps = 60.0f / bpm;
+        lastCalc = bps + 1;
     }
 
     void FixedUpdate() {
@@ -19,24 +21,23 @@ public class GameBeat : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
 
-        time += Time.fixedDeltaTime;
-
-        if (time > bps) { 
-            time -= bps;
+        double calc = Time.fixedTime % bps;
+        if (calc < lastCalc) {
             if (beat == 7) GetComponent<AudioSource>().time = 0;
-
             beat = (beat + 1) % 8;
         }
+        
+        lastCalc = calc;
 
-        if (Input.GetButtonDown("Fire1")) print((checkInput() ? "HIT!!!" : "MISS!!") + " " + time);
+        if (Input.GetButtonDown("Fire1")) print((checkInput() ? "HIT!!!" : "MISS!!") + " " + lastCalc);
     }
 
-    static bool getBinary() {
+    public static bool getBinary() {
         return beat % 2 == 0;
     }
 
-    static bool checkInput() {
-        return time > bps * 0.8f || time < bps * 0.2f;
+    public static bool checkInput() {
+        return lastCalc > bps * 0.8f || lastCalc < bps * 0.2f;
     }
 
     void OnGUI() {

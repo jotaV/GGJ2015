@@ -29,8 +29,8 @@ GameObject:
   - 60: {fileID: 6019668}
   - 50: {fileID: 5019668}
   - 114: {fileID: 11419668}
-  - 114: {fileID: 11419666}
   - 95: {fileID: 9519668}
+  - 114: {fileID: 11443196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -208,17 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3c247f0d290f04abd30925c00e2bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11419666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44ba4985e556e8642924b65158b644b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11419668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +220,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!114 &11443196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e3d161c86bf244eb272c7830428e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0}
 --- !u!124 &12419668
 Behaviour:
   m_ObjectHideFlags: 1

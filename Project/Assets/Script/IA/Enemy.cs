@@ -21,7 +21,9 @@ public class Enemy : MonoBehaviour {
     }
 
     public void MoveToEnemy() {
-        Vector2 /*moveVector*/ mv = (Vector2)player.transform.position - (Vector2)transform.position;
-        rigidbody2D.velocity = mv.normalized * speed;
+        if (Vector3.Distance(transform.position, player.transform.position) > 0.8f) {
+            Vector2 /*moveVector*/ mv = (Vector2) player.transform.position - (Vector2)transform.position;
+            rigidbody2D.velocity = mv.normalized * speed;
+        }
     }
 }

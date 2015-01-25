@@ -12,7 +12,7 @@ GameObject:
   - 60: {fileID: 6066548}
   - 50: {fileID: 5066548}
   - 114: {fileID: 11466548}
-  - 114: {fileID: 11466550}
+  - 114: {fileID: 11416182}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -62,6 +62,18 @@ PolygonCollider2D:
       - {x: -.00797736645, y: -.988235831}
       - {x: .594230652, y: -.67739588}
       - {x: .0132918954, y: -.328731656}
+--- !u!114 &11416182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e3d161c86bf244eb272c7830428e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0}
 --- !u!114 &11466548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,17 +91,6 @@ MonoBehaviour:
   endWaitTime: 3
   startActionTime: 2
   entActionTime: 2
---- !u!114 &11466550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44ba4985e556e8642924b65158b644b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21266548
 SpriteRenderer:
   m_ObjectHideFlags: 1
