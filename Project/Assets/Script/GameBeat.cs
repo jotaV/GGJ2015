@@ -29,7 +29,7 @@ public class GameBeat : MonoBehaviour {
         
         lastCalc = calc;
 
-        if (Input.GetButtonDown("Fire1")) print((checkInput() ? "HIT!!!" : "MISS!!") + " " + lastCalc);
+        //if (Input.GetButtonDown("Fire1")) print((checkInput() ? "HIT!!!" : "MISS!!") + " " + lastCalc);
     }
 
     public static bool getBinary() {

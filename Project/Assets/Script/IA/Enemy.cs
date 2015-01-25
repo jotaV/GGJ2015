@@ -26,4 +26,8 @@ public class Enemy : MonoBehaviour {
             rigidbody2D.velocity = mv.normalized * speed;
         }
     }
+
+    public void GiveDamage() {
+        print("Damage Taiken");
+    }
 }
