@@ -23,6 +23,7 @@ public class Menu : MonoBehaviour {
 			{
 				OpenWindow ();
 				changed = false;
+				Application.LoadLevel("FirstLevel-Jv");
 			}
 			else
 				delay -= 1 * Time.deltaTime;
