@@ -19,12 +19,18 @@ public class PlayerAttack : MonoBehaviour {
         transform.localPosition = vel.normalized;
 
         if (Input.GetButtonDown("Fire1")) {
-            if (GameBeat.checkInput() != null) {
+            GameBeat.Beat b = GameBeat.checkInput();
+
+            if (b != null) {
+                
                 foreach (GameObject go in enemys) {
                     go.GetComponent<Enemy>().ReceiveDamage();
                 }
+
             } else {
-                lastBeat = GameBeat.beat;
+                
+                lastBeat = b.beat;
+            
             }
         } else {
             if (GameBeat.checkInput() == null) lastBeat = GameBeat.beat;

@@ -19,25 +19,30 @@ public class GameBeat : MonoBehaviour {
 
     public static double lastCalc;
     public static int beat;
+    public static int sumBeat = 0;
+
+    public float initalPoint = 0;
 
     void Awake() {
         beat = -1;
         bps = 60.0f / bpm;
 
-        print(bps);
-
         lastCalc = bps + 1;
     }
 
     void FixedUpdate() {
-        if (beat == -1) { 
-            GetComponent<AudioSource>().time = 0;
+        if (beat == -1) {
+            GetComponent<AudioSource>().time = initalPoint;
             GetComponent<AudioSource>().Play();
         }
 
         double calc = Time.fixedTime % bps;
         if (calc < lastCalc) {
-            if (beat == 7) GetComponent<AudioSource>().time = 0;
+            /*if (sumBeat == 13 * 2.5f) {
+                GetComponent<AudioSource>().time = initalPoint;
+                sumBeat = 0;
+            }*/
+            sumBeat++;
             beat = (beat + 1) % 8;
         }
         
@@ -51,9 +56,9 @@ public class GameBeat : MonoBehaviour {
     }
 
     public static Beat checkInput() {
-        if (lastCalc > bps * 0.75f){
+        if (lastCalc > bps * 0.6f){
             return new Beat(beat + 1, lastCalc);
-        }else if(lastCalc < bps * 0.35f) {
+        }else if(lastCalc < bps * 0.4f) {
             return new Beat(beat, lastCalc);
         }
         return null;

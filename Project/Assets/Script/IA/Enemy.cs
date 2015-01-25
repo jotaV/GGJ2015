@@ -28,12 +28,11 @@ public class Enemy : MonoBehaviour {
     }
 
     virtual internal void GiveDamage() {
-        PlayerAttack pA = player.GetComponentInChildren<PlayerAttack>();
-
-        if (pA.lastBeat != GameBeat.beat) return;
+        PlayerAttack pA = GameObject.FindWithTag("PlayerAtack").GetComponent<PlayerAttack>();
+        if (pA.lastBeat < GameBeat.beat) return;
 
         if (onContactPlayer && lastBeat != GameBeat.getBinary() && !getDamage) {
-            print("give Damage " + GameBeat.beat);
+            //print("give Damage " + GameBeat.beat);
         }
 
         getDamage = false;
@@ -50,7 +49,7 @@ public class Enemy : MonoBehaviour {
     public void ReceiveDamage() {
         if (!getDamage) {
             getDamage = true;
-            print("Damage Taiken " + GameBeat.beat + " " + GameBeat.lastCalc);
+            //print("Damage Taiken " + GameBeat.beat + " " + GameBeat.lastCalc);
         }
     }
 
